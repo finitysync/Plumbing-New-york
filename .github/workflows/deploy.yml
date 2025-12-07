@@ -24,19 +24,19 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Verify build directory exists
+      - name: Verify dist directory exists
         run: |
-          if [ ! -d "build" ]; then
-            echo "Build directory not found!"
+          if [ ! -d "dist" ]; then
+            echo "Dist directory not found!"
             exit 1
           fi
-          ls -la build/
+          ls -la dist/
 
-      - name: Copy static files to build
+      - name: Copy static files to dist
         run: |
-          cp .htaccess build/.htaccess
-          cp -r assets build/assets
-          ls -la build/
+          cp .htaccess dist/.htaccess
+          cp -r assets dist/assets
+          ls -la dist/
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -44,5 +44,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: dist/
           server-dir: /Sub-domains/Plumbing-New-York/
