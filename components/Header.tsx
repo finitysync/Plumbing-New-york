@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, onNavigate }) => {
         {/* Logo */}
         <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-2">
           <img 
-            src="./assets/logo.png" 
+            src="https://ik.imagekit.io/finitysync/Finity%20Sync/Projects/Plumbing%20New%20York/Logo.png?updatedAt=1765113935086" 
             alt="Plumbing NYC" 
             className={`h-12 sm:h-16 w-auto py-4 object-contain transition-all duration-300 ${!isSolidHeader ? 'brightness-0 invert' : ''}`}
           />

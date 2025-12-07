@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="./assets/logo.png"
+                src="https://ik.imagekit.io/finitysync/Finity%20Sync/Projects/Plumbing%20New%20York/Logo.png?updatedAt=1765113935086"
                 alt="Plumbing NYC"
                 className="h-12 py-2 w-auto object-contain"
               />
