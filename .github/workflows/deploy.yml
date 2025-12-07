@@ -26,6 +26,7 @@ jobs:
 
       - name: Copy extra files into build
         run: |
+          mkdir -p build
           cp .htaccess build/.htaccess
           cp favicon.png build/favicon.png
 
