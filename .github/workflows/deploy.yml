@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p build
           cp .htaccess build/.htaccess
-          cp favicon.png build/favicon.png
+          cp -r assets build/assets
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
