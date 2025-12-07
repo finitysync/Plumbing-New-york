@@ -24,11 +24,19 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Copy extra files into build
+      - name: Verify build directory exists
         run: |
-          mkdir -p build
+          if [ ! -d "build" ]; then
+            echo "Build directory not found!"
+            exit 1
+          fi
+          ls -la build/
+
+      - name: Copy static files to build
+        run: |
           cp .htaccess build/.htaccess
           cp -r assets build/assets
+          ls -la build/
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
